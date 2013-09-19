@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="AmazonListapp_scala">
+  <target name="scala-init">
+    <property name="scala-library.jar" value="${env.SCALA_HOME}/lib/scala-library.jar"></property>
+    <property name="scala-reflect.jar" value="${env.SCALA_HOME}/lib/scala-reflect.jar"></property>
+    <property name="scala.lib" value="${env.SCALA_HOME}/lib"></property>
+    <taskdef resource="scala/tools/ant/antlib.xml">
+      <classpath>
+        <pathelement location="${env.SCALA_HOME}/lib/scala-compiler.jar"></pathelement>
+        <pathelement location="${scala-reflect.jar}"></pathelement>
+        <pathelement location="${scala-library.jar}"></pathelement>
+      </classpath>
+    </taskdef>
+  </target>
+
+  <target name="scala-build" depends="scala-init">
+    <scalac srcdir="${source.dir}" destdir="${out.dir}">
+      <classpath>
+        <pathelement location="${sdk.dir}/platforms/${target}/android.jar"></pathelement>
+        <pathelement location="${scala-library.jar}"></pathelement>
+        <pathelement location="${source.dir}"></pathelement>
+      </classpath>
+    </scalac>
+  </target>
+</project>
