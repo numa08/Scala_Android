@@ -1,0 +1,9 @@
+# ScalaでAndroidアプリを書いてみたかった
+
+とりあえずEclipse（ScalaIDE）でのビルドはできる。AntはWindowsではパスに空白が含まれてたので駄目だった。別のOSは未確認。
+
+
+dexすることのできるメソッドが2^16個という上限があるらしく、Scala-libary.jarを参照に含めるだけでわりと上限達してしまう模様。Support-libraryとの共存は無理だった。
+
+
+そんなわけで、ScalaでAndroidのコードを書くのはしばらく無理そう。これはOSの問題かなぁ
